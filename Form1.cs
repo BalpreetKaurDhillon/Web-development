@@ -7,8 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
-namespace WindowsFormsApp7
+
+
+namespace driver_license
 {
     public partial class Form1 : Form
     {
@@ -17,68 +20,47 @@ namespace WindowsFormsApp7
             InitializeComponent();
         }
 
-        private void label4_Click(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }
-        string classA, classB, classC;
-        double A, B, C;
-        class=textBox1.Text;
-             classA = textBox2.Text;
-             classB = textBox2.Text;
-            classC = textBox3.Text;
-            //double to 
-            A = double.Parse(classA);
-            B = double.Parse(classB);
-            C = double.Parse(classC);
-        //calculations
-        double cal1;
-        call = A* 15;
-            textBox4.Text = call.ToString("C");
 
-            double cal2;
-        cal2 = B* 12;
-            textBox5.Text = cal2.ToString("C");
+        private void button1_Click(object sender, EventArgs e)
+        {
+            char[] num = new char[20];
+            num[0] = 'B';
+            num[1] = 'D';
+            num[2] = 'A';
+            num[3] = 'A';
+            num[4] = 'C';
+            num[5] = 'A';
+            num[6] = 'B';
+            num[7] = 'A';
+            num[8] = 'C';
+            num[9] = 'D';
+            num[10] = 'B';
+            num[11] = 'C';
+            num[12] = 'D';
+            num[13] = 'A';
+            num[14] = 'D';
+            num[15] = 'C';
+            num[16] = 'C';
+            num[17] = 'B';
+            num[18] = 'D';
+            num[19] = 'A';
 
-            double cal3;
-        cal3 = C* 9;
-            textBox6.Text = cal3.ToString("C");
+            label1.Text = num[20].ToString();
+            for (int i = 0; i < 20; i++) ;
+            label1.Text = label1.Text + "n" + num[20].ToString();
 
-            double total;
-        total = cal1 + cal2 + cal3;
-            textBox7.Text= total.ToString("C");
+            int[] ab = new int[20];
+            StreamReader input;
+            input = File.OpenText("BL.Txt");
 
-
-        }
-        catch(Exception ab)
+            for (int i = 0; i < num.Length && !input.EndOfStream; i++) ;
             {
-            MessageBox.Show("Handle Exception");
-        }
-    {
-            //clear content
-            text.Box1.Text="";
-            text.Box2.Text="";
-            text.Box3.Text="";
-            text.Box4.Text="";
-            text.Box5.Text="";
-              text.Box6.Text="";
-         text.Box7.Text="";
-        }
-
-
-private void button3_Click; (object sender, EventArgs e)
-    {
-            //close the application
-            this.Close();
-                }
-
-
-
-
-
-
-private void button1_Click(object sender, EventArgs e)
-        {
+                ab[20] = int.Parse(input.ReadLine());
+            }
 
         }
     }
